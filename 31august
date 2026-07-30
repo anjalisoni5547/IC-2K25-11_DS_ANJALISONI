@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+    //array size maximum minimum
+     int i, s,max,min;
+     cout<<"Enter the size of array: "<<endl;
+     cin>>s;
+     //memory allocation 
+     int* arr=new int[s];
+     //size of array
+     cout<<"Enter " << s << " interger: "<<endl;
+     for(i=0; i<s; i++){
+         cout<<"Element "<<i+1<<endl;
+         cin>>arr[i];
+     }
+     cout<<"The following are:"<<endl;
+     //maximum
+     for(i=0; i<s; i++){
+     cout<<arr[i]<<endl;
+     }
+     max=arr[0];
+     for(i=0; i<s; i++){
+         if(arr[i]>max){
+             max=arr[i];
+         }
+     }
+     cout<<"maximum num:"<<max<<endl;
+     //minimum
+      min=arr[0];
+     for(i=0; i<s; i++){
+         if(arr[i]<min){
+             min=arr[i];
+         }
+     }
+     cout<<"minimum num:"<<min;
+     
+    delete[]arr;
+    return 0;
+}
