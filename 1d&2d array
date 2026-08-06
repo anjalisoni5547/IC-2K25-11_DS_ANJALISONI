@@ -1,0 +1,102 @@
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     // Write C++ code here
+//   int arr[]={32,45,-4,54,32,46,54};
+// //   int max,min=arr[0];
+// //   int sum, even, odd, positive, negative=0;
+//   int n=7;
+//   int max=arr[0];
+//   int min=arr[0];
+//   int sum=0;
+//   int even=0;
+//   int odd=0;
+//   int positive=0;
+//   int negative=0;
+   
+// //   int maxim()
+// //   int even_odd
+   
+//   for(int i=0; i<n; i++){
+//       if(arr[i]>max){
+//       max=arr[i];
+//       }
+//       if(arr[i]<min){
+//       min=arr[i]; 
+           
+//       
+//       sum =sum + arr[i];
+       
+       
+//       if(arr[i]>=0)
+//       positive++;
+//       else
+//       negative++;
+       
+//       if(arr[i]%2==0)
+//       even++;
+       
+//   }
+//   cout<<"Maximum Element:"<< max << endl;
+//     cout<<"Minimum Element:"<< min << endl;
+//      cout<<"Sum Element:"<< sum << endl;
+//       cout<<"Even Element:"<< even << endl;
+//       cout<<"Odd Element:"<< odd << endl;
+//         cout<<"Positive Element:"<< positive << endl;
+//          cout<<"Negative Element:"<< negative << endl;
+//     return 0;
+// }
+
+
+//for 2d array
+
+#include <iostream>
+using namespace std;
+int main() {
+    // Write C++ code here
+   int arr[3][3]={{32,45,-4},
+            {32,46,54},
+       {354,45,45}
+   };
+   //int n=6;
+   int max=arr[0][0];
+   int min=arr[0][0];
+   int sum=0;
+   int even=0;
+   int odd=0;
+   int positive=0;
+   int negative=0;
+   
+//   int maxim()
+//   int even_odd
+   
+   for(int i=0; i<3; i++){
+       for(int j=0; j<3; j++){
+       if(arr[i][j]>max){
+       max=arr[i][j];
+       }
+       if(arr[i][j]<min){
+       min=arr[i][j]; 
+           
+       }
+       sum =sum + arr[i][j];
+       
+       
+       if(arr[j][i]>=0)
+       positive++;
+       else
+       negative++;
+       
+       if(arr[i][j]%2==0)
+       even++;
+       }   
+   }
+   cout<<"Maximum Element:"<< max << endl;
+    cout<<"Minimum Element:"<< min << endl;
+     cout<<"Sum Element:"<< sum << endl;
+      cout<<"Even Element:"<< even << endl;
+       cout<<"Odd Element:"<< odd << endl;
+        cout<<"Positive Element:"<< positive << endl;
+         cout<<"Negative Element:"<< negative << endl;
+    return 0;
+}
