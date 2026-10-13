@@ -1,0 +1,107 @@
+//USING CUSTON METHOD
+
+//DELETION OF ELEMENT AT THE BEGINNING
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {  
+    vector<int> arr = { 10, 20, 30, 40 };
+    int n = arr.size();
+  
+    cout << "Array before deletion\n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+
+    // Shift all the elements 1 position 
+    // starting from second element
+    for(int i = 1; i < n; i++)
+        arr[i - 1] = arr[i];
+   
+    // Reduce the array size by 1
+    n--;
+
+    cout << "\nArray after deletion\n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+
+    return 0;
+}
+
+OUTPUT:
+Array before deletion
+10 20 30 40 
+Array after deletion
+20 30 40 
+
+
+//DELETION OF ELEMENT AT THE END
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> arr = { 10, 20, 30, 40 };
+    int n = arr.size();
+  
+    cout << "Array before deletion\n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+  	
+    // Reduce the array size by 1
+    n--;
+
+    cout << "\nArray after deletion\n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+
+    return 0;
+}
+
+OUTPUT:
+Array before deletion
+10 20 30 40 
+Array after deletion
+10 20 30 
+
+//DELETION OF ELEMENT AT THE Kth POSITION
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> arr = { 23, 243, 43, 43 };
+    int n = arr.size();
+	int pos = 4;
+  
+    cout << "Array before deletion\n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+	
+  	// Delete the element at the given position
+    for(int i = pos; i < n; i++) {
+    	arr[i - 1] = arr[i];
+    }
+  
+    if(pos <= n)
+		n--;
+    cout<<endl;
+
+    cout << "Array after deletion\n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+
+    return 0;
+}
+OUTPUT:
+Array before deletion
+23 243 43 43 
+Array after deletion
+23 243 43 
+
+//DELETION OF ELEMENT AT THE FIRST OCCURNACE OF ELEMENT 
+//DELETION OF ELEMENT AT ALL OCCURANCE OF ELEMENT
+
