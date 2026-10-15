@@ -1,0 +1,92 @@
+//ACCESSING THE ELEMENT OF ARRAY
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    // Initializing a 2-D vector with values
+    vector<vector<int>> arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+    // Accessing elements of 2-D vector
+    cout << "First element of first row: " << arr[0][0] << "\n";
+    cout << "Third element of second row: " << arr[1][2] << "\n";
+    cout << "Second element of third row: " << arr[2][1] << "\n";
+
+    return 0;
+}
+OUTPUT:
+First element of first row: 1
+Third element of second row: 6
+Second element of third row: 8
+
+
+
+//TRAVERSAL THE ELEMENT OF ARRAY
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    // Initializing a 2-D vector with values
+    vector<vector<int>> arr = { { 1, 2, 3, 4 },
+                                { 5, 6, 7, 8 },
+                                { 9, 10, 11, 12 } };
+
+    // Traversing over all the rows
+    for (int i = 0; i < arr.size(); i++) {
+      
+        // Traversing over all the columns of each row
+        for (int j = 0; j < arr[i].size(); j++) {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+OUTPUT:
+First element of first row: 1
+Third element of second row: 6
+Second element of third row: 8
+
+
+//SEARCH AN ELEMENT OF ARRAY
+
+#include <bits/stdc++.h>
+using namespace std;
+
+bool searchInMatrix(vector<vector<int> >& arr, int x)
+{
+    int m = arr.size(), n = arr[0].size();
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (arr[i][j] == x)
+                return true;
+        }
+    }
+    return false;
+}
+
+// Driver program to test above
+int main()
+{
+    int x = 8;
+    vector<vector<int> > arr
+        = { { 0, 6, 8, 9, 11 },
+            { 20, 22, 28, 29, 31 },
+            { 36, 38, 50, 61, 63 },
+            { 64, 66, 100, 122, 128 } };
+
+    if (searchInMatrix(arr, x))
+        cout << "YES" << endl;
+    else
+        cout << "NO" << endl;
+
+    return 0;
+}
+OUTPUT:
+YES
