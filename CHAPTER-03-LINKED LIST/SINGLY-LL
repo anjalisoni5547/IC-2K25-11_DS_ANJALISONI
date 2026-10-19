@@ -1,0 +1,95 @@
+//SINGLY LL OPERTION BASIC
+
+#include<iostream>
+#include<algorithm>
+#include<vector>
+using namespace std;
+struct Node
+{
+    public:
+    int data;
+    Node*next;
+    public:
+    Node (int data1, Node*next1){
+        data=data1;
+        next=next1;
+        
+    }
+    //constructor
+    public:
+    Node(int data1){
+        data=data1;
+        next=nullptr;
+    }
+};
+    Node* convertArr2ll(vector<int> &arr) {
+        Node*head = new Node (arr[0]);
+            Node*move = head;
+            for(int i=1; i<arr.size(); i++){
+                Node*temp = new Node(arr[i]);
+                move->next = temp;
+                move = temp;
+            }
+            return head;
+        
+    }
+int lengthofll(Node*head){
+    int count= 0;
+    Node* temp = head;
+    while(temp){
+        //if not comment out the out then answer will be traversal
+       // cout<<temp->data<<" ";
+        temp= temp->next;
+        count++;
+    }
+    return count;
+}
+void print(Node*head){
+    while(head != NULL)
+        {
+            cout<<head->next<<" ";
+            head=head->next;
+        }
+    cout<<endl;
+}
+Node*removeshead(Node*head){
+    if(head == NULL)return head;
+    Node*temp = head;
+    cout<< head->data<<" ";
+    head = head->next;
+    delete temp;
+    return head;
+}
+ 
+int main(){
+    vector<int> arr = {2,5,8,7};
+    Node* head = convertArr2ll(arr);
+    Node*temp = head;  
+   // Node*y = new Node(arr[0]);
+   // cout<<y->data;
+    //new head
+   cout<<"New head:"<<head->data<<" ";
+    cout<<endl;
+
+    //length
+    while(temp){
+        cout<< temp->data<<" ";
+        temp = temp->next; 
+    }
+    cout<<endl;
+    cout<<"Length of list:"<<lengthofll(head)<<endl;
+    //delete
+   
+       head = removeshead(head);
+       cout<<"List after removing head:"<<" ";
+       print(head);
+    
+    return 0;
+}
+
+
+New head:2 
+2 5 8 7 
+Length of list:4
+2 List after removing head: 0x18da7310 0x18da7330 0 
+
